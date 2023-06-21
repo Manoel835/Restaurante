@@ -1,4 +1,6 @@
 import { Container } from "./styles"
+import { useState } from "react"
+import { NavLink } from "react-router-dom"
 import {ReactComponent as BurgerIcon} from '../../assets/burger.svg'
 import {ReactComponent as PizzaIcon} from '../../assets/pizza.svg'
 import {ReactComponent as SodaIcon} from '../../assets/soda.svg'
@@ -7,35 +9,42 @@ import menuImg from '../../assets/menu.svg'
 
 
 export function Sidebar(){
-  return<Container>
-    <button type="button">
+
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleToggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+  return<Container isMenuOpen = {menuOpen}>
+    <button type="button" onClick={handleToggleMenu}>
       <img src={menuImg} alt="Abrir e fechar menu" />
     </button>
     <nav>
       <ul>
               <li>
-                <a href='#'>
+                <NavLink to='/' >
                   <BurgerIcon />
                   <span> Hambúrgueres</span>
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href='#'>
+                <NavLink to='/pizzas'>
                   <PizzaIcon />
                   <span> Pizzas</span>
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href='#'>
+                <NavLink to='drinks'>
                   <SodaIcon />
                   <span> Bebidas</span>
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href='#'>
+                <NavLink to='ice-creams'>
                   <IceCreamIcon />
                   <span> Sorvetes</span>
-                </a>
+                </NavLink>
               </li>
             </ul>
     </nav>
