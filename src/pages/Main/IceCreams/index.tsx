@@ -1,36 +1,25 @@
 import { Head } from "../../../components/Head"
 import { SnackTitle } from "../../../components/SnackTitle"
 import { Snacks } from "../../../components/Snacks"
+import { useEffect, useState } from "react"
+import { getIceCreams } from "../../../services/api"
 export default function IceCreams(){
-  const data = [{
-    id: 1,
-    snack: 'ice-cream',
-    name: 'Casquinha',
-    description:'A casquinha crocante e saborosa que nossos clientes amam.',
-    price: 4.5,
-    image:'https://i.imgur.com/YGmeoCm.jpg',
-  },
+  const [IceCreams , setIceCreams ] = useState([])
+
+  useEffect(() =>
   {
-    id: 2,
-    snack: 'ice-cream',
-    name: 'Chocolate com granulado',
-    description:'Sorvete de chocolate com granulado em chocolate para você se deliciar',
-    price: 6,
-    image:'https://i.imgur.com/osAHOLe.jpg',
-  },{
-    id: 3,
-    snack: 'ice-cream',
-    name: 'Flocos',
-    description:'O tradicional flocos vem com cobertura em chocolate para adoicar seu dia.',
-    price: 7,
-    image: 'https://i.imgur.com/qgnFLiy.jpg'
-  }]
+    ;(async () =>{
+      const IceCreamsRequest = await getIceCreams()
+      setIceCreams(IceCreamsRequest.data)
+    })()
+  },[])
+
   return(
 
     <>
       <Head title="Sorvetes"/>
       <SnackTitle>Sorvetes</SnackTitle>
-      <Snacks snacks={data}></Snacks>
+      <Snacks snacks={IceCreams}></Snacks>
     </>
     )
   }
