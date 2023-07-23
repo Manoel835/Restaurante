@@ -1,4 +1,5 @@
 import { currencyFormat } from '../../helpers/currencyFormat'
+import { SkeletonSnack } from './SkeletonSnack'
 import {Container} from './styles'
 import {FiPlus} from 'react-icons/fi'
 
@@ -8,7 +9,7 @@ interface SnacksProps{
 export function Snacks({snacks}: SnacksProps) {
   return(
     <Container>
-      {!snacks.length ? (<p style={{color: '#fff'}}>Loading...</p>) : (
+      {!snacks.length ? ([1,2,3,4].map((n) => <SkeletonSnack key={n}/>)) : (
         snacks.map((snack) => (
         <div key={snack.id} className='snack'>
           <h2>{snack.name}</h2>
