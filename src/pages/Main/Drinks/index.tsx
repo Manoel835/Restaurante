@@ -1,10 +1,8 @@
 import { Head } from "../../../components/Head"
 import { SnackTitle } from "../../../components/SnackTitle"
 import { Snacks } from "../../../components/Snacks"
-import {useState, useEffect, useContext} from "react"
-import {getDrinks} from "../../../services/api"
-import { SnackData } from "../../../interfaces/SnackData"
-import { SnackContext } from "../../../App"
+import { useContext} from "react"
+import { SnackContext } from "../../../contexts/SnackContext"
 export default function Drinks(){
   const {drinks} = useContext(SnackContext)
 
