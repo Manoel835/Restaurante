@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
-import { createContext, useState, useEffect} from 'react'
+import { createContext} from 'react'
 import { AppRoutes } from './routes'
 import { Theme } from './styles/Theme'
 import { GlobalStyle } from './styles/global'
