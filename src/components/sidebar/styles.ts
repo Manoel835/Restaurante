@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.aside`
-background-color:${(props) => (props.theme.colors.red)};
+background-color:${(props) => (props.theme.colors.secondary)};
 width: 7.75rem;
 padding: 2rem 0;
 overflow: hidden;
@@ -31,12 +31,13 @@ align-items: center;
         position: relative;
         padding-left: 1.875rem;
         padding-right: 1.875rem;
+        padding-bottom: 1.875rem;
         display: flex;
         align-items: center;
         gap: 2rem;
 
         svg{
-          fill: ${(props) => (props.theme.colors.white)};
+          fill: ${(props) => (props.theme.colors.red)};
           width: 4rem;
           height: 4rem;
           transition: fill 0.3s;
@@ -54,16 +55,16 @@ align-items: center;
             top: 50%;
             bottom: 0;
             transform: translateY(-50%);
-            background-color: ${(props) => (props.theme.colors.yellow)};
+            background-color: ${(props) => (props.theme.colors.red)};
             width: 5px;
             height: calc(100% + 10px);
             border-radius: 0 5px 5px 0;
           }
           svg{
-            fill: ${(props) => (props.theme.colors.yellow)};
+            fill: ${(props) => (props.theme.colors.red)};
           }
           span{
-            color: ${(props) => (props.theme.colors.yellow)}
+            color: ${(props) => (props.theme.colors.red)}
           }
         }
       }

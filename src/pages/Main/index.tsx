@@ -1,4 +1,4 @@
-import { Sidenar } from '../../components/Sidebar'
+import { Sidenar } from './../../components/sidebar/index'
 import { Container } from './styles'
 
 
