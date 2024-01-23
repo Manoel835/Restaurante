@@ -47,7 +47,6 @@ export const Container = styled.aside<ContainerProps>`
         display: flex;
         align-items: center;
         gap: 2rem;
-
         svg {
           fill: ${(props) => props.theme.colors.red};
           width: 4rem;
