@@ -1,11 +1,12 @@
 import { Head } from '../../../components/Head'
 import { SnackTitle } from '../../../components/SnackTitle'
 import Snacks from '../../../components/Snacks'
+import { SnackData } from '../../../interfaces/SnackData'
 import { getDrinks } from '../../../services/api'
 import { useEffect, useState } from 'react'
 
 export default function Drinks() {
-  const [drinks, setDrinks] = useState([])
+  const [drinks, setDrinks] = useState<SnackData[]>([])
   useEffect(() => {
     (async() =>{
       const drinksRequest = await getDrinks()
